@@ -13,11 +13,11 @@ import { HttpClient } from '@angular/common/http';
 import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
-  selector: 'app-loan-page',
-  templateUrl: './loan-page.component.html',
-  styleUrls: ['./loan-page.component.css']
+  selector: 'app-loan',
+  templateUrl: './loan.component.html',
+  styleUrls: ['./loan.component.sass']
 })
-export class LoanPageComponent implements OnInit {
+export class LoanComponent implements OnInit {
 
   public types = [ 'Email', 'Maximum date'];
   public email: string;
