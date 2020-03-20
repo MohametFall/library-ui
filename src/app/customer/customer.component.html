@@ -15,7 +15,7 @@
   </div>
   <div class="div-search-customer"> 
     <fieldset class="fieldset-search-customer">
-          <legend><b>Search Books Form</b></legend>
+          <legend><b>Search Customer Form</b></legend>
         <form #searchCustomerForm="ngForm" (ngSubmit)="searchCustomersByType(searchCustomerForm)">
            <label for="Search By" class="search-label">Search By:</label><select class="search-select" name="type" required [(ngModel)]="displayType"><option *ngFor="let type of types" [value]="type">{{type}}</option></select>
          <ng-container *ngIf="displayType==='Email'"><label for="Email" class="search-label">Email:</label><input name="email" class="search-input" type="text" pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required [(ngModel)]=email></ng-container>
