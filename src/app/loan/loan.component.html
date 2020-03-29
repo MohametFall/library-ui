@@ -33,7 +33,8 @@
                 <td>{{loan.customerDTO.lastName}}</td>
                 <td>{{loan.loanBeginDate | date:'dd/MM/yyyy'}}</td>
                 <td>{{loan.loanEndDate | date:'dd/MM/yyyy'}}</td>
-                <td><button value="Close" class="button-close-loan" (click)=closeLoan(loan) [disabled]="disabledBackground">Close Loan</button></td><td><button *ngIf="true" value="Send Email" class="button-send-email-loan" (click)=displaySendEmailForm(loan.customerDTO.id) [disabled]="disabledBackground"><img src="./assets/mail.jpg"/></button></td>
+                <td><button value="Close" class="button-close-loan" (click)=closeLoan(loan) [disabled]="disabledBackground">Close Loan</button></td>
+                <td><button *ngIf="true" value="Send Email" class="button-send-email-loan" (click)=displaySendEmailForm(loan.customerDTO.id) [disabled]="disabledBackground"><img src="./assets/mail.jpg"/></button></td>
               </tr>
            </table>
         </ng-container>

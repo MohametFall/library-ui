@@ -11,6 +11,8 @@ import { Customer } from 'src/app/models/customer';
 import { forkJoin } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { environment } from "src/environments/environment";
+
 
 @Component({
   selector: 'app-loan',
@@ -57,8 +59,8 @@ saveLoan(addLoanForm: NgForm){
     if(!addLoanForm.valid){
         window.alert('Error in the form');
     }
-    let book = this.http.get<Book>('/library/rest/book/api/searchByIsbn?isbn='+this.simpleLoan.isbn);
-    let customer = this.http.get<Customer>('/library/rest/customer/api/searchByEmail?email='+this.simpleLoan.email);
+    let book = this.http.get<Book>(environment.apiUrl+'/rest/book/api/searchByIsbn?isbn='+this.simpleLoan.isbn);
+    let customer = this.http.get<Customer>(environment.apiUrl+'/rest/customer/api/searchByEmail?email='+this.simpleLoan.email);
     forkJoin([book, customer]).subscribe(results => {
       if((results[0] && results[0].id) && (results[1] && results[1].id)){
         this.simpleLoan.bookId = results[0].id;
